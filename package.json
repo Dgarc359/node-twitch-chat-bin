@@ -6,16 +6,15 @@
   "scripts": {
     "prestart": "yarn tsc",
     "start": "node out/index.js",
-    "build": "node build.js"
+    "build": "yarn esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=out/index.js"
   },
   "dependencies": {
     "esbuild": "^0.20.1",
     "esbuild-plugin-tsc": "^0.4.0",
-    "glob": "^10.3.10",
-    "tmi.js": "^1.8.5",
-    "@types/tmi.js": "^1.8.6"
+    "tmi.js": "^1.8.5"
   },
   "devDependencies": {
+    "@types/tmi.js": "^1.8.6",
     "typescript": "^5.4.2"
   }
 }
